@@ -1,6 +1,6 @@
 body{
 	text-align:center;
-	background-image: url("bedge_grunge.png");
+	background-image: url("../images/bedge_grunge.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment:fixed;
@@ -39,13 +39,22 @@ body{
 }
 .gameInfoHeader{
 	font-family: 'Bungee Outline', cursive;
-	font-size:35px;
+	font-size:40px;
 }
 .gamefont{
 	font-family: 'Julius Sans One', sans-serif;
-	font-size:20px;
+	font-size:30px;
+}
+
+.font-arial{
+	font-family:arial;
+}
+
+.lives-font{
+	color:red;
 }
 #mainheader{
 	font-family: 'Bungee Outline', cursive;
-	font-size:60px;
+	font-size:70px;
 }
+

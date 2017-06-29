@@ -17,11 +17,11 @@
 <body>
 
 <div class="container">
-	<div class="row">
+	<div class="row pad-bottom">
 		<h1 id="mainheader">Hangman</h1>
 		<span style="font-family:'Julius Sans One',sans-serif;font-size:10px">Have fun while increasing your vocabulary!</span>
 	</div>
-	<div class="row">											   <!-- game buttons -->							
+	<div class="row pad-bottom">											   <!-- game buttons -->							
 		<div class="container-fluid pad-bottom">
 			<button type="button" class= "btn btn-info" onclick="whichAnsrArray(4)">4-Letter Words</button>
 			<button type="button" class= "btn btn-info" onclick="whichAnsrArray(5)">5-Letter Words</button>
@@ -29,12 +29,12 @@
 			<button type="button" class= "btn btn-danger" onclick="myReset()">Reset Game</button>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row pad-bottom font-arial">
 		<p id="messagebox"></p>
 	</div>
 	<div class="row">
 		<div id="definitionbutton" class="hidden pad-bottom">
-			<a href="#" class= "bg-info" id="def" target="blank">Click here to see the definition</a>
+			<a href="#" class= "bg-info font-arial" id="def" target="blank">Click here to see the definition</a>
 		</div>
 	</div>
 	<div class="row pad-bottom">
@@ -43,7 +43,7 @@
 				<div class="pad-bottom gamefont" id="maingame"></div>		
 			</div>
 			<div class="row pad-bottom">
-				<span class="small">Click the virtual keyboard to select a key or use your own keyboard!</span>
+				<span class="small font-arial">Click the virtual keyboard to select a key or use your own keyboard!</span>
 			</div>
 			<div class="row keyboard pad-bottom">					<!-- keyboard section -->
 				<div class="row letterrow pad-bottom">
@@ -90,16 +90,16 @@
 			</div>
 		</div>
 		<div class="col-md-4 col-md-offset-1 guesses pad-bottom">
-			<div class="row">
-				<h1 class="gameInfoHeader">Lives</h1>
-				<span class="gamefont" id="strikecount">9</span>
+			<div class="row pad-bottom">
+				<h1 class="gameInfoHeader pad-bottom">Lives</h1>
+				<span class="gamefont lives-font" id="strikecount">9</span>
 			</div>
-			<div class="row">
-				<h1 class="gameInfoHeader">Wrong guesses</h1>
+			<div class="row pad-bottom">
+				<h1 class="gameInfoHeader pad-bottom">Wrong guesses</h1>
 				<span class="gamefont" id="wrongguess"></span>
 			</div>
-			<div class="row">
-				<h1 class="gameInfoHeader">Correct guesses</h1>
+			<div class="row pad-bottom">
+				<h1 class="gameInfoHeader pad-bottom">Correct guesses</h1>
 				<span class="gamefont" id="rightguess"></span>
 			</div>
 		</div>
