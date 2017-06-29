@@ -1,0 +1,51 @@
+body{
+	text-align:center;
+	background-image: url("bedge_grunge.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    background-color: #464646;
+    margin-bottom:60px;
+}
+.letterbox{
+	width:40px;
+	height:30px;
+	display:inline-block;
+	background-color:#cccccc;
+	border-bottom: 1px solid black;
+	text-align:center;
+	margin-right:5px;
+	vertical-align:text-bottom;
+/*	line-height:70px;*/
+}
+.hidden{
+	visibility:hidden;
+}
+
+.show{
+	visibility:visible;
+}
+.lives,.main,.guesses{
+	background-color:#cccccc;
+	opacity:0.9;
+	border:1px solid black;
+}
+.pad-bottom{
+	padding-bottom:10px;
+}
+.pad-top{
+	padding-top:10px;
+}
+.gameInfoHeader{
+	font-family: 'Bungee Outline', cursive;
+	font-size:35px;
+}
+.gamefont{
+	font-family: 'Julius Sans One', sans-serif;
+	font-size:20px;
+}
+#mainheader{
+	font-family: 'Bungee Outline', cursive;
+	font-size:60px;
+}

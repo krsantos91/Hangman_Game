@@ -1,0 +1,110 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Hang Man Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Outline|Faster+One|Permanent+Marker|Julius+Sans+One" rel="stylesheet">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<h1 id="mainheader">Hangman</h1>
+		<span style="font-family:'Julius Sans One',sans-serif;font-size:10px">Have fun while increasing your vocabulary!</span>
+	</div>
+	<div class="row">											   <!-- game buttons -->							
+		<div class="container-fluid pad-bottom">
+			<button type="button" class= "btn btn-info" onclick="whichAnsrArray(4)">4-Letter Words</button>
+			<button type="button" class= "btn btn-info" onclick="whichAnsrArray(5)">5-Letter Words</button>
+			<button type="button" class= "btn btn-info" onclick="whichAnsrArray(6)">6-Letter Words</button>
+			<button type="button" class= "btn btn-danger" onclick="myReset()">Reset Game</button>
+		</div>
+	</div>
+	<div class="row">
+		<p id="messagebox"></p>
+	</div>
+	<div class="row">
+		<div id="definitionbutton" class="hidden pad-bottom">
+			<a href="#" class= "bg-info" id="def" target="blank">Click here to see the definition</a>
+		</div>
+	</div>
+	<div class="row pad-bottom">
+		<div class="col-md-7 main">									<!-- gameplay window -->
+			<div class="row pad-bottom pad-top">
+				<div class="pad-bottom gamefont" id="maingame"></div>		
+			</div>
+			<div class="row pad-bottom">
+				<span class="small">Click the virtual keyboard to select a key or use your own keyboard!</span>
+			</div>
+			<div class="row keyboard pad-bottom">					<!-- keyboard section -->
+				<div class="row letterrow pad-bottom">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('q')">Q</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('w')">W</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('e')">E</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('r')">R</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('t')">T</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('y')">Y</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('u')">U</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('i')">I</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('o')">O</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('p')">P</button></div><div class="col-xs-1"></div>
+				</div>
+				<div class="row letterrow pad-bottom">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('a')">A</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('s')">S</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('d')">D</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('f')">F</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('g')">G</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('h')">H</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('j')">J</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('k')">K</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('l')">L</button></div>
+					<div class="col-xs-1"></div>																			
+					<div class="col-xs-1"></div>
+				</div>
+				<div class="row letterrow pad-bottom">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('z')">Z</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('x')">X</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('c')">C</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('v')">V</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('b')">B</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('n')">N</button></div>
+					<div class="col-xs-1"><button type="button" class="btn btn-primary" onclick="letterassign('m')">M</button></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
+				</div>										
+			</div>
+		</div>
+		<div class="col-md-4 col-md-offset-1 guesses pad-bottom">
+			<div class="row">
+				<h1 class="gameInfoHeader">Lives</h1>
+				<span class="gamefont" id="strikecount">9</span>
+			</div>
+			<div class="row">
+				<h1 class="gameInfoHeader">Wrong guesses</h1>
+				<span class="gamefont" id="wrongguess"></span>
+			</div>
+			<div class="row">
+				<h1 class="gameInfoHeader">Correct guesses</h1>
+				<span class="gamefont" id="rightguess"></span>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="assets/javascript/HangmanJS.js"></script>
+</body>
+</html>
